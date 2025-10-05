@@ -2,7 +2,7 @@ package kmms
 
 import kmms.enums.Coordinate
 
-data object Utils{
+object Utils {
   /**
    * Utilities for MCMS (Minecraft Server Management System)
    * Provides formatting and parsing functions for Minecraft data types
@@ -110,7 +110,7 @@ data object Utils{
   fun formatTags(tags: Map<String, Any>): String {
     fun formatType(value: Any): String {
       return when (value) {
-        is Map<*, *> -> formatTags(value as Map<String, Any>)
+        is Map<*, *> -> formatTags(value as Map<String, String>)
         is List<*> -> "[" + value.joinToString(",") { item -> formatType(item!!) } + "]"
         is String -> "\"$value\""
         else -> value.toString()
