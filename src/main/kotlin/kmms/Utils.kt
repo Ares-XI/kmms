@@ -142,9 +142,9 @@ object Utils {
    * ```
    */
   fun formatCoordinates(
-    x: Any, // Int or Pair<String, Int>
-    y: Any, // Int or Pair<String, Int>
-    z: Any, // Int or Pair<String, Int>
+    x: Number, // Int or Pair<String, Int>
+    y: Number, // Int or Pair<String, Int>
+    z: Number, // Int or Pair<String, Int>
     coordinate: Coordinate? = null
   ): String {
     fun formatSingle(coord: Any): String {
@@ -179,7 +179,7 @@ object Utils {
     y: Int,
     z: Int,
     coordinate: Coordinate? = null
-  ): String = formatCoordinates(x as Any, y as Any, z as Any, coordinate)
+  ): String = formatCoordinates(x as Number, y as Number, z as Number, coordinate)
 
   /**
    * Alternative overload for formatCoordinates with explicit Pair types
@@ -189,5 +189,5 @@ object Utils {
     y: Pair<String, Int>,
     z: Pair<String, Int>,
     coordinate: Coordinate? = null
-  ): String = formatCoordinates(x as Any, y as Any, z as Any, coordinate)
+  ): String = formatCoordinates(x, y, z, coordinate)
 }
